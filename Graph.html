@@ -6,8 +6,9 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; My sample book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Analisa Graph &#8212; My sample book</title>
   
   
   
@@ -56,8 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
-    <link rel="index" title="Index" href="#" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Graph';</script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -253,7 +254,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FGraph.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -265,6 +266,54 @@
   </span>
 <span class="btn__text-container">Open issue</span>
 </a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Graph.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
 </li>
       
   </ul>
@@ -306,7 +355,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -317,11 +368,27 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1></h1>
+    <h1>Analisa Graph</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisa Graph</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">Degree Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-closeness-centrality">Contoh Closeness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-betweenness-centrality">Normalisasi Betweenness Centrality</a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -331,13 +398,109 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
+  <section id="analisa-graph">
+<h1>Analisa Graph<a class="headerlink" href="#analisa-graph" title="Link to this heading">#</a></h1>
+<p>Graph adalah frekuensi antara hubungan antar suatu objek cotoh nya orang yang berhubungan seperti komunikasi sesama orang yang dapat di nyatakan dalam graph berbobot.
+contoh garph berbobot selain komunikasi yaitu jarak antara kota masing masing individu seperti individu yang dari bangkalan , pamekasan,sampang dan surabaya.
+dan dalam graph yang menyatakan jaraknya kita bisa mencari lintasan terpendek lewat mana berddasarkan garph berbobot.
+*Social Network Analysis merupakan bidang kajian yang mengekplorasitentang hubungan manusia dengan menggunakan teori graf. Implementasi Social Network Analysis dapat menjelaskan relasi atau hubungan antar aktor melalui visualisasi berbentuk graf. Relasi dalam analisis jaringan sosial dapat diproses dalam bentuk perhitungan yang disebut centrality dalam sebuah jaringan sosial sesuai dengan posisi masing-masing aktor di dalam struktur jaringan tersebut
+<img alt="image" src="https://hackmd.io/_uploads/Hy6SVNOMJx.png" /></p>
+<p><img alt="image" src="https://hackmd.io/_uploads/BJZ4S4dMke.png" /></p>
+<p>Social network
+terdapat node yang mewakili
+orang atau individu atau aktor.
+Relasi  antar objek  dapat dinyatakan dengan link
+atau edges yang terjadi antara aktor tersebut
+Social network terdiri dari banyak aktor
+yang mempunyai relasi satu sama lain hingga
+membentuk peta jaringan sosial yang dinyatakan dengan
+graph
+*Tidak semua node dalam jaringan adalah penting  (aktor)
+*Mencari node yang paling penting dalam suatu jaringan
+*Centrality adalah penentuan aktor menggunakan ukuran pada Social Network Centrality dalam teori graf dan social network .Dibagi menjadi empat jenis,
+-degree centrality,
+-betweeness centrality,
+-closeness centrality
+-eigenvector centrality</p>
+</section>
+<section id="degree-centrality">
+<h1>Degree Centrality<a class="headerlink" href="#degree-centrality" title="Link to this heading">#</a></h1>
+<p>*Degree centrality adalah jumlah edge yang terkoneksi pada suatu node yang mewakili interaksi.
+*Pentingnya node ditentukan oleh jumlah node yang berdekatan dengan node tersebut
+-Lebih besar derajatnya (degree), maka lebih penting node itu dalam suatu jaringan
+-Hanya sebagian kecil node yang memiliki derajat tinggi dalam jaringan
+Degree Centraliity
+<img alt="image" src="https://hackmd.io/_uploads/BkYyrSdGyx.png" /></p>
+<p>Normalisasi  Degree Centrality:
+<img alt="image" src="https://hackmd.io/_uploads/B1aeBHuzkg.png" /></p>
+<p><img alt="image" src="https://hackmd.io/_uploads/S1twBrOMkl.png" /></p>
+<p>Untuk  node 1, degree centrality adalah 3;
+Normalisasi degree centrality adalah
+3/(9-1)=3/8.</p>
+</section>
+<section id="closeness-centrality">
+<h1>Closeness Centrality<a class="headerlink" href="#closeness-centrality" title="Link to this heading">#</a></h1>
+<p>*Closenes centrality adalah nilai kedekatan antara satu node dengan node lain dalam jaringan dengan menghitung rata-rata dari jarak relasi node-node tersebut. Skor closeness centrality mewakili kecepatan dalam penyebaran informasi.</p>
+<p>*Average Distance:
+<img alt="image" src="https://hackmd.io/_uploads/SyA5KUdzJl.png" /></p>
+<p>*Closeness Centrality
+<img alt="image" src="https://hackmd.io/_uploads/BJQsFU_z1g.png" /></p>
+</section>
+<section id="contoh-closeness-centrality">
+<h1>Contoh Closeness Centrality<a class="headerlink" href="#contoh-closeness-centrality" title="Link to this heading">#</a></h1>
+<p><img alt="image" src="https://hackmd.io/_uploads/HJGntIdMye.png" /></p>
+<p><img alt="image" src="https://hackmd.io/_uploads/BkohKLOfkl.png" /></p>
+<p><img alt="image" src="https://hackmd.io/_uploads/S1bTFIuzkl.png" /></p>
+</section>
+<section id="betweenness-centrality">
+<h1>Betweenness Centrality<a class="headerlink" href="#betweenness-centrality" title="Link to this heading">#</a></h1>
+<p>*Skor betweeness Centrality mewakili seberapa besar informasi yang tersebar dari suatu aktor. Semakin besar skor, artinya aktor tersebut semakin berperan dalam penyebaran informasi</p>
+<p>*Semakin banyak lintasan yang harus melewati persimpangan itu (misal tidak ada jalan alternatif), maka semakin penting arti persimpangan tersebut. Hal ini menandakan seberapa besar suatu node diperlukan sebagai penghubung dalam penyebaran informasi di dalam jaringan</p>
+<p>*Ukuran ini juga dapat digunakan untuk mengidentifikasi boundary spanners, yaitu orang atau node yang berperan sebagai penghubung (jembatan) antara dua komunitas</p>
+</section>
+<section id="id1">
+<h1>Betweenness Centrality<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>*Menghitung jumlah lintasan terpendek yang melewati suatu node
+*Node dengan  betweenness  tinggi  adalah  penting dalam komunikasi dan penyebaran informasi
+*Betweenness Centrality
+<img alt="image" src="https://hackmd.io/_uploads/ryhf9Luf1l.png" />
+<img alt="image" src="https://hackmd.io/_uploads/SkQ798dfkg.png" />
+<img alt="image" src="https://hackmd.io/_uploads/BJGIqIOG1x.png" /></p>
+</section>
+<section id="id2">
+<h1>Betweenness Centrality<a class="headerlink" href="#id2" title="Link to this heading">#</a></h1>
+<p><img alt="image" src="https://hackmd.io/_uploads/SJxd9Luzyg.png" />
+<img alt="image" src="https://hackmd.io/_uploads/ByHOc8dfkl.png" />
+<img alt="image" src="https://hackmd.io/_uploads/ry5OcU_GJl.png" /></p>
+<p>betweenness centrality  untuk node 5?
+<img alt="image" src="https://hackmd.io/_uploads/S1Xq5Luz1x.png" />
+<img alt="image" src="https://hackmd.io/_uploads/r1059I_zyg.png" />
+<img alt="image" src="https://hackmd.io/_uploads/H1Xs5L_zyl.png" /></p>
+</section>
+<section id="normalisasi-betweenness-centrality">
+<h1>Normalisasi Betweenness Centrality<a class="headerlink" href="#normalisasi-betweenness-centrality" title="Link to this heading">#</a></h1>
+<p><img alt="image" src="https://hackmd.io/_uploads/Bywh5Lufye.png" /></p>
+</section>
 
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
-</div>
-
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -355,6 +518,29 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Analisa Graph</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#degree-centrality">Degree Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#closeness-centrality">Closeness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-closeness-centrality">Contoh Closeness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#betweenness-centrality">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Betweenness Centrality</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#normalisasi-betweenness-centrality">Normalisasi Betweenness Centrality</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
